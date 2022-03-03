@@ -371,13 +371,3 @@ def template(*args, **kwargs):
         else:
             TEMPLATES[tplid] = adapter(name=tpl, **settings)
     return TEMPLATES[tplid].render(kwargs)
-
-
-if __name__ == '__main__':
-    print(template('Hello {{name}}!', name='World'))
-    print(template(
-        r"""<ul>
-    % for item in map(str,range(10)):
-        <li>{{item}}</li>
-    % end
-    </ul>"""))
